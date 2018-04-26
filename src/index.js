@@ -1,12 +1,12 @@
-
-
 let fetchPromise;
 
-if (typeof window === 'undefined' || window.hasOwnProperty('fetch')) {
-  fetchPromise = require('node-fetch'); // eslint-disable-line global-require
-} else {
-  fetchPromise = fetch;
-}
+// if (typeof window === 'undefined' || window.hasOwnProperty('fetch')) {
+//   fetchPromise = require('node-fetch'); // eslint-disable-line global-require
+// } else {
+//   fetchPromise = fetch;
+// }
+
+fetchPromise = require("node-fetch");
 
 /**
  * [timeoutPromise description]
@@ -34,7 +34,7 @@ function timeoutPromise(promise, timeout, error) {
  * @return {Promise}
  */
 module.exports = function fetchTimeout(url, options, timeout, error) {
-  error = error || 'Timeout error';
+  error = error || "Timeout error";
   options = options || {};
   timeout = timeout || 10000;
   return timeoutPromise(fetchPromise(url, options), timeout, error);
