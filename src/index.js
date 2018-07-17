@@ -1,4 +1,4 @@
-let fetchPromise;
+const fetchPromise = require('whatwg-fetch');
 
 // if (typeof window === 'undefined' || window.hasOwnProperty('fetch')) {
 //   fetchPromise = require('node-fetch'); // eslint-disable-line global-require
@@ -6,7 +6,7 @@ let fetchPromise;
 //   fetchPromise = fetch;
 // }
 
-fetchPromise = require("node-fetch");
+// fetchPromise = require("node-fetch");
 
 /**
  * [timeoutPromise description]
